@@ -1,0 +1,22 @@
+// transiton: .6s
+@mixin tran($sec: .6s) { 
+	-webkit-transition: $sec all linear;
+	-moz-transition: $sec all linear;
+	-ms-transition: $sec all linear;
+	-o-transition: $sec all linear;
+	transition: $sec all linear;
+}
+
+
+// display: inline-block
+@mixin inlineblock($vert: top) { 
+	display: inline-block;
+	vertical-align: $vert;
+}
+
+//Media Query Mixin
+@mixin respond-to($media) {
+  @media only screen and #{$media} {
+    @content;
+  }
+}
