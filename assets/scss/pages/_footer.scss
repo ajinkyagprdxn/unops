@@ -1,0 +1,72 @@
+footer {
+		background-color: $black;
+	.wrapper {
+		padding: 30px 0;
+		color: $white;
+	}
+	.subscribecontact-ul,
+	.updated-ul,
+	.footerlinks-ul {
+		min-height: 190px;		
+		@include inlineblock;
+		li {
+				padding: 10px 0;
+			a {
+				color: $white;
+				@include tran;
+				&:hover {
+					color: $greydark;
+				}
+			}
+		}
+	}
+	.subscribecontact-ul {
+		width: 18%;
+		padding-right: 2%;
+	}
+	.updated-ul {
+		width: 46%;
+		padding: 0 2%;
+		border-right: 1px solid $greydark;
+		border-left: 1px solid $greydark;
+		.keeputext {
+			color: $greydark;
+			font-weight: 700;
+		}
+		.subscribe-flink {
+			padding-top: 10px;
+			display: inline-block;
+		}
+	}
+	.footerlinks-ul {
+		width: 24%;
+		padding-left: 2%;
+	}
+	.footersocial-ul {
+		li {			
+			@include inlineblock;
+			a {
+				display: inline-block;
+				padding: 10px 20px;
+				@include tran;
+				&:hover {
+					color: $greydark;
+				}
+			}
+		}
+	}
+	.topbtn {
+		position: fixed;
+		right: 6.1%;
+		bottom: 40px;
+		padding: 9px 15px;
+		background: $orange;
+		color: $white;
+		font-size: 32px;
+		opacity: 1;
+		@include tran;
+		&:hover {
+			opacity: .8;
+		}
+	}
+}

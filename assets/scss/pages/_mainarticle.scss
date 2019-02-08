@@ -1,0 +1,119 @@
+.mainarticle {
+	.wrapper {
+		position: relative;		
+	}
+	.bluerect1 {
+		width: 31.472%;
+		max-width: 406px;
+		height: 530px;
+		background-color: $bluelight;
+		position: absolute;
+		z-index: 2;
+		top: 388px;
+		.articleimg-square {
+			position: absolute;
+			top: 50%;
+			right: -25%;
+			transform: translate(25%,-50%);
+		}
+	}
+	.rectanglepost {
+		width: 68.32%;
+		margin: -200px 0 0 31.472%;
+		background-color: $whiteop;
+		.ecoint-link {
+			width: 24%;
+			max-width: 206px;
+			height: auto;
+			padding: 51px 0 47px 29px;
+			display: block;
+		}
+		h3 {
+			margin: 0 3%;
+			color: $seablue;
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 1.4;
+			&:after {
+				content: '';
+				display: block;
+				padding-bottom: 10px;
+				width: 15%;				
+				border-bottom: 5px solid $seablue;
+			}		
+		}
+		p {
+			margin: 15px 3%;
+			font-size: 14px;
+			line-height: 1.4;
+		}	
+	}
+	.articleimg-ul {
+		padding: 30px 0 38px;
+		.articleimg-li {
+			@include inlineblock;
+			&:first-child {
+				width: 30%;				
+				img{					
+					display: none;					
+				}
+			}
+			&:last-child {
+				width: 65%;
+				h4 {
+					margin: 0;
+					color: $seablue;
+					font-size: 22px;
+					font-weight: 700;
+					&:after {
+						content: '';
+						display: block;
+						padding-bottom: 10px;
+						width: 15%;				
+						border-bottom: 5px solid $seablue;
+					}
+				}
+				p {
+					margin: 20px 0;
+				}
+				.articlepts-ul {
+					margin-left: 4%;
+					li {
+						padding: 5px 0;
+						list-style-type: disc;
+					}
+				}
+			}
+		}
+	}
+	h4 {
+		margin: 0 3%;
+		color: $seablue;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 1.4;
+		&:after {
+			content: '';
+			display: block;
+			padding-bottom: 10px;
+			width: 15%;				
+			border-bottom: 5px solid $seablue;
+		}
+	}
+	.readfull-btn {
+		width: 46.628%;
+		margin: 0 0 30px 3%;
+		display: inline-block;
+		padding: 10px 0;
+		border: 1px solid $white;
+		background: $seablue;
+		color: $white;
+		text-align: center;
+		@include tran;
+		&:hover{
+			border: 1px solid $seablue;
+			background-color: $white;
+			color: $seablue;
+		}
+	}
+}

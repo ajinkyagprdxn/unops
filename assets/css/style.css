@@ -1,160 +1,590 @@
-@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3,
+h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,
+big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-/*------------------------------------------------------------------
-  [Table of contents]
-  * To keep an overview of structure of your code, we make use of table of 
-  * content. Table of content is use display the overall tree structure of your
-  * Layout. 
-  * (NOTE: Remove this commented code once you start developing the code.
-  * Remove the following table of content and add your own as this is just and 
-  * example to let you know)
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
 
-  1. CSS Reset Code
-    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
-    1.2. Clear Fix
-    1.3. Font class declaration
-  2. Body
-  3. Header / .header
-    2.1. Navigation / .navbar
-  4. Content / .content
-    4.1. Left column / .leftcolumn
-    4.2. Right column / .rightcolumn
-    4.3. Sidebar / .sidebar
-      4.3.1. RSS / .rss
-      4.3.2. Search / .search
-      4.3.3. Boxes / .box
-      4.3.4. Sideblog / .sideblog
-      4.3.5. Advertisements / .ads
-  5. Footer / .footer
-  ------------------------------------------------------------------*/
+body {
+  line-height: 1; }
 
-/*------------------------------------------------------------------
-  [Color codes]
-  * Mention the color code you have used in your html document for the respective
-  * elements given as follow. 
-  * (NOTE: Remove this commented code once you start developing the code. 
-  * Remove the following color code and add your own as this is just and 
-  * example to let you know)
+ol, ul {
+  list-style: none; }
 
-  Header nav: #e5e5df (Cararra)
-  Header nav a (hover): #fff (white)
-  Header nav a (active): #fff (white)
-  -------------------------------------------------------------------*/
+blockquote, q {
+  quotes: none; }
 
-/*------------------------------------------------------------------
-  [Typography]
-  * Mention the Typography you have used in your html document for the respective
-  * elements given as follow.
-  * (NOTE: Remove this commented code once you start developing the code. 
-  * Remove the following typography and add your own as this is just and 
-  * example to let you know)
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
 
-  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  -------------------------------------------------------------------*/
+q:before, q:after {
+  content: '';
+  content: none; }
 
-/* ==========================================================================
-   1. CSS Reset Code
-   ========================================================================== */
-
-/* 1.1. Eric Meyers Reset
-   http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-   ========================================================================== */
-   html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-   blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-   ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-   dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-   tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-   figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-   time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-   }
-
-   /* HTML5 display-role reset for older browsers */
-   article, aside, details, figcaption, figure,
-   footer, header, hgroup, menu, nav, section {
-    display: block;
-   }
-
-   /* Force scrollbar */
-   html { overflow-y: scroll; }
-
-   /* Align radios and text inputs with their label */
-
-   input[type='radio'] { vertical-align: text-bottom; }
-
-   /* Hand cursor on clickable input elements */
-   label,
-   input[type='button'],
-   input[type='submit'],
-   button {
-    cursor: pointer;
-   }
-
-   strong {
-    font-weight: bold;
-    font-family: inherit;
-    font-size: inherit;
-   }
-
-   em { font-style: italic; }
-
-   img {
-    border: 0;
-    vertical-align: middle;
-   }
-
-   sub,
-   sup {
-    vertical-align: baseline;
-    position: relative;
-    font-size: 55%;
-    line-height: 0;
-   }
-
-   sup { top: -.7em; }
-
-   sub { bottom: -.25em; }
-
-/* 1.2. Clear Fix
-========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
 
 .cf:before,
 .cf:after {
   display: table;
-  content: " ";
-}
+  content: " "; }
 
-.cf:after { clear: both; }
+.cf:after {
+  clear: both; }
 
-.cf { *zoom: 1; }
+.cf {
+  *zoom: 1; }
 
-/* 1.3. Font class declaration
-========================================================================== */
-/*
- * Mention the font property (eg: font-family, font-size, font-weight, font-style
- * etc) that have been commonly used in the html document. Make a class of it and
- * apply to the element wherever it is needed. If any single property in changed,
- * then override only that property in the particular class which is used for the
- * element.
- * (NOTE: Remove this commented code once you start 
- * developing the code. Remove the following font class and add your own
- * as this is just and example to let you know. If there is only one font family
- * followed throughout the site, then menstion the font property in body. No need
- * of creating an extra class for it) */
+.wrapper {
+  width: 80.1242%;
+  max-width: 1610px;
+  margin: 0 auto; }
 
- .futura-bold-font {
-  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: bold;
- }
+img {
+  width: 100%;
+  display: block; }
 
- /* ======= Your styling goes below ======= */
+*, a, p, span {
+  font-family: sans-serif; }
 
+a {
+  text-decoration: none; }
+
+.socialmenusbar .headermenu .menu-ul.block {
+  display: block; }
+
+.bodyh {
+  overflow-y: hidden; }
+
+header .header-top {
+  background-color: #000; }
+header h1 {
+  width: 10.8%;
+  display: inline-block;
+  vertical-align: top;
+  background: #fff; }
+header .hamburger {
+  width: 88.5%;
+  display: inline-block;
+  vertical-align: top; }
+header nav .nav-li {
+  padding: 5px 10px;
+  margin-top: 15px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top; }
+  header nav .nav-li a {
+    -webkit-transition: 0.6s all linear;
+    -moz-transition: 0.6s all linear;
+    -ms-transition: 0.6s all linear;
+    -o-transition: 0.6s all linear;
+    transition: 0.6s all linear; }
+    header nav .nav-li a:hover {
+      color: #6c8895; }
+  header nav .nav-li:hover .subnav-ul {
+    display: block;
+    background: rgba(255, 255, 255, 0.9); }
+    header nav .nav-li:hover .subnav-ul .subnav-li a {
+      padding: 5px;
+      display: block;
+      color: #000;
+      line-height: 1.4; }
+      header nav .nav-li:hover .subnav-ul .subnav-li a:hover {
+        color: #fff;
+        background: #000; }
+  header nav .nav-li a {
+    color: #fff; }
+  header nav .nav-li:nth-child(4) {
+    padding-left: 16%; }
+header nav .subnav-ul {
+  width: 150px;
+  margin-top: 5px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; }
+header nav .logintext, header nav .loginarrow {
+  display: inline-block;
+  vertical-align: top; }
+header nav .logintext .leftlog, header nav .logintext .rightlog {
+  display: inline-block;
+  vertical-align: top; }
+header nav .logintext .logyellow {
+  display: block;
+  color: #f9d021; }
+header .search {
+  padding: 5px 0;
+  background: transparent;
+  border-radius: 4px; }
+  header .search .searchbtn {
+    padding-left: 5px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px; }
+  header .search .searchbox {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff; }
+  header .search ::placeholder {
+    color: #fff;
+    opacity: 1;
+    /* Firefox */ }
+header .adfeature {
+  padding: 30px 0;
+  background: #fff; }
+  header .adfeature .adleft,
+  header .adfeature .adright {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px; }
+  header .adfeature .adleft {
+    width: 50%;
+    text-align: left; }
+  header .adfeature .adright {
+    width: 45%;
+    text-align: right; }
+    header .adfeature .adright .adrighttext,
+    header .adfeature .adright .adrightimg {
+      width: 45%;
+      max-width: 157px;
+      display: inline-block;
+      vertical-align: middle; }
+header .socialmenusbar {
+  position: relative;
+  background: #f3f5f6; }
+  header .socialmenusbar .social-links {
+    padding: 18px 0 11px;
+    display: inline-block; }
+    header .socialmenusbar .social-links .social-li {
+      display: inline-block;
+      vertical-align: top;
+      filter: contrast(30%);
+      -webkit-transition: 0.6s all linear;
+      -moz-transition: 0.6s all linear;
+      -ms-transition: 0.6s all linear;
+      -o-transition: 0.6s all linear;
+      transition: 0.6s all linear; }
+      header .socialmenusbar .social-links .social-li:hover {
+        filter: contrast(50%); }
+header .headermenu {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  position: relative;
+  top: 10px; }
+  header .headermenu .menu-btn {
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: relative;
+    background: transparent; }
+    header .headermenu .menu-btn:hover .menubar1 {
+      width: 70%; }
+    header .headermenu .menu-btn:hover .menubar2 {
+      width: 50%; }
+    header .headermenu .menu-btn:hover .menubar3 {
+      width: 30%; }
+    header .headermenu .menu-btn.active .menubar1, header .headermenu .menu-btn.active .menubar2, header .headermenu .menu-btn.active .menubar3 {
+      width: 100%; }
+  header .headermenu .menubar1,
+  header .headermenu .menubar2,
+  header .headermenu .menubar3 {
+    height: 2px;
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #000;
+    -webkit-transition: 0.6s all linear;
+    -moz-transition: 0.6s all linear;
+    -ms-transition: 0.6s all linear;
+    -o-transition: 0.6s all linear;
+    transition: 0.6s all linear; }
+  header .headermenu .menubar1 {
+    width: 35%;
+    top: 30%; }
+  header .headermenu .menubar2 {
+    width: 95%;
+    top: 50%; }
+  header .headermenu .menubar3 {
+    width: 75%;
+    top: 70%; }
+header .active .menubar1 {
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: rotate(45deg); }
+header .active .menubar2 {
+  width: 100%;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-name: middlebar; }
+@keyframes middlebar {
+  from {
+    opacity: 1;
+    position: absolute;
+    left: 0px; }
+  to {
+    opacity: 0;
+    position: absolute;
+    left: -100px; } }
+header .active .menubar3 {
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: rotate(135deg); }
+header .menu-ul {
+  display: none;
+  width: 300px;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  padding: 60px;
+  background-color: #fff; }
+  header .menu-ul .menu-li a {
+    display: block;
+    padding: 5px 0;
+    margin: 1px 0;
+    background-color: transparent;
+    color: #6c8895; }
+    header .menu-ul .menu-li a:hover {
+      background-color: #b0d2e2;
+      color: #000; }
+  header .menu-ul .menu-li:hover .submenu-ul {
+    display: block; }
+  header .menu-ul .menu-li .fa-angle-right {
+    padding-left: 30px;
+    float: right; }
+  header .menu-ul .submenu-ul {
+    display: none; }
+    header .menu-ul .submenu-ul li {
+      padding-left: 5%; }
+
+.banner {
+  width: 100%;
+  height: 650px;
+  background-image: url("../images/1S.jpg");
+  background-position: center;
+  background-repeat: no-repeat; }
+  .banner .wrapper {
+    width: 100%; }
+  .banner .bannertext {
+    width: 40%;
+    display: block;
+    padding: 115px 0 0 27.5%; }
+    .banner .bannertext p {
+      padding-bottom: 20px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700; }
+    .banner .bannertext h2 {
+      color: #fff;
+      font-size: 52px;
+      font-weight: 700; }
+
+.mainarticle .wrapper {
+  position: relative; }
+.mainarticle .bluerect1 {
+  width: 31.472%;
+  max-width: 406px;
+  height: 530px;
+  background-color: #b0d2e2;
+  position: absolute;
+  z-index: 2;
+  top: 388px; }
+  .mainarticle .bluerect1 .articleimg-square {
+    position: absolute;
+    top: 50%;
+    right: -25%;
+    transform: translate(25%, -50%); }
+.mainarticle .rectanglepost {
+  width: 68.32%;
+  margin: -200px 0 0 31.472%;
+  background-color: rgba(255, 255, 255, 0.9); }
+  .mainarticle .rectanglepost .ecoint-link {
+    width: 24%;
+    max-width: 206px;
+    height: auto;
+    padding: 51px 0 47px 29px;
+    display: block; }
+  .mainarticle .rectanglepost h3 {
+    margin: 0 3%;
+    color: #0a5f94;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4; }
+    .mainarticle .rectanglepost h3:after {
+      content: '';
+      display: block;
+      padding-bottom: 10px;
+      width: 15%;
+      border-bottom: 5px solid #0a5f94; }
+  .mainarticle .rectanglepost p {
+    margin: 15px 3%;
+    font-size: 14px;
+    line-height: 1.4; }
+.mainarticle .articleimg-ul {
+  padding: 30px 0 38px; }
+  .mainarticle .articleimg-ul .articleimg-li {
+    display: inline-block;
+    vertical-align: top; }
+    .mainarticle .articleimg-ul .articleimg-li:first-child {
+      width: 30%; }
+      .mainarticle .articleimg-ul .articleimg-li:first-child img {
+        display: none; }
+    .mainarticle .articleimg-ul .articleimg-li:last-child {
+      width: 65%; }
+      .mainarticle .articleimg-ul .articleimg-li:last-child h4 {
+        margin: 0;
+        color: #0a5f94;
+        font-size: 22px;
+        font-weight: 700; }
+        .mainarticle .articleimg-ul .articleimg-li:last-child h4:after {
+          content: '';
+          display: block;
+          padding-bottom: 10px;
+          width: 15%;
+          border-bottom: 5px solid #0a5f94; }
+      .mainarticle .articleimg-ul .articleimg-li:last-child p {
+        margin: 20px 0; }
+      .mainarticle .articleimg-ul .articleimg-li:last-child .articlepts-ul {
+        margin-left: 4%; }
+        .mainarticle .articleimg-ul .articleimg-li:last-child .articlepts-ul li {
+          padding: 5px 0;
+          list-style-type: disc; }
+.mainarticle h4 {
+  margin: 0 3%;
+  color: #0a5f94;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4; }
+  .mainarticle h4:after {
+    content: '';
+    display: block;
+    padding-bottom: 10px;
+    width: 15%;
+    border-bottom: 5px solid #0a5f94; }
+.mainarticle .readfull-btn {
+  width: 46.628%;
+  margin: 0 0 30px 3%;
+  display: inline-block;
+  padding: 10px 0;
+  border: 1px solid #fff;
+  background: #0a5f94;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: 0.6s all linear;
+  -moz-transition: 0.6s all linear;
+  -ms-transition: 0.6s all linear;
+  -o-transition: 0.6s all linear;
+  transition: 0.6s all linear; }
+  .mainarticle .readfull-btn:hover {
+    border: 1px solid #0a5f94;
+    background-color: #fff;
+    color: #0a5f94; }
+
+.furtherreading {
+  background-color: #f0f0f1;
+  padding-bottom: 45px;
+  border-bottom: 5px solid #f00; }
+  .furtherreading .wrapper {
+    position: relative; }
+  .furtherreading .bluerect2 {
+    width: 33.8%;
+    height: 755px;
+    position: absolute;
+    z-index: 0;
+    left: 15%;
+    background-color: #b0d2e2; }
+  .furtherreading h3 {
+    padding: 40px 0 40px 32.5%;
+    color: #0a5f94;
+    font-size: 52px;
+    font-weight: 700; }
+  .furtherreading .further1-ul {
+    padding: 30px 0 15px;
+    position: relative;
+    z-index: 2; }
+    .furtherreading .further1-ul .further1-li {
+      width: 32.5%;
+      display: inline-block;
+      vertical-align: top; }
+      .furtherreading .further1-ul .further1-li:nth-child(1) .hidetext {
+        display: none; }
+      .furtherreading .further1-ul .further1-li:nth-child(3) {
+        width: 30.5%;
+        padding-left: 2%; }
+        .furtherreading .further1-ul .further1-li:nth-child(3) .ecointell {
+          width: 50%;
+          max-width: 206px; }
+        .furtherreading .further1-ul .further1-li:nth-child(3) h4 {
+          padding: 20px 0;
+          color: #0a5f94;
+          font-size: 22px;
+          font-weight: 700; }
+        .furtherreading .further1-ul .further1-li:nth-child(3) p {
+          font-size: 14px;
+          line-height: 1.4; }
+        .furtherreading .further1-ul .further1-li:nth-child(3) a {
+          padding: 10px 20px;
+          border: 1px solid #6c8895;
+          margin: 28px 0;
+          display: inline-block;
+          background-color: #6c8895;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 700;
+          -webkit-transition: 0.6s all linear;
+          -moz-transition: 0.6s all linear;
+          -ms-transition: 0.6s all linear;
+          -o-transition: 0.6s all linear;
+          transition: 0.6s all linear; }
+          .furtherreading .further1-ul .further1-li:nth-child(3) a:hover {
+            color: #6c8895;
+            background-color: #fff; }
+  .furtherreading .further2-ul {
+    padding: 15px 0 30px;
+    position: relative;
+    z-index: 2; }
+    .furtherreading .further2-ul .further2-li {
+      width: 32.5%;
+      display: inline-block;
+      vertical-align: top; }
+      .furtherreading .further2-ul .further2-li:nth-child(1) {
+        width: 30.5%;
+        padding-right: 2%; }
+        .furtherreading .further2-ul .further2-li:nth-child(1) .unopslogo {
+          width: 60%;
+          padding-left: 37%;
+          max-width: 206px; }
+        .furtherreading .further2-ul .further2-li:nth-child(1) h4 {
+          padding: 20px 0;
+          color: #0a5f94;
+          font-size: 22px;
+          font-weight: 700;
+          text-align: right; }
+        .furtherreading .further2-ul .further2-li:nth-child(1) p {
+          font-size: 14px;
+          line-height: 1.4;
+          text-align: right; }
+        .furtherreading .further2-ul .further2-li:nth-child(1) a {
+          padding: 10px 20px;
+          border: 1px solid #6c8895;
+          margin: 28px 0;
+          display: inline-block;
+          background-color: #6c8895;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 700;
+          float: right;
+          -webkit-transition: 0.6s all linear;
+          -moz-transition: 0.6s all linear;
+          -ms-transition: 0.6s all linear;
+          -o-transition: 0.6s all linear;
+          transition: 0.6s all linear; }
+          .furtherreading .further2-ul .further2-li:nth-child(1) a:hover {
+            color: #6c8895;
+            background-color: #fff; }
+      .furtherreading .further2-ul .further2-li:nth-child(3) .hidetext {
+        display: none; }
+
+footer {
+  background-color: #000; }
+  footer .wrapper {
+    padding: 30px 0;
+    color: #fff; }
+  footer .subscribecontact-ul,
+  footer .updated-ul,
+  footer .footerlinks-ul {
+    min-height: 190px;
+    display: inline-block;
+    vertical-align: top; }
+    footer .subscribecontact-ul li,
+    footer .updated-ul li,
+    footer .footerlinks-ul li {
+      padding: 10px 0; }
+      footer .subscribecontact-ul li a,
+      footer .updated-ul li a,
+      footer .footerlinks-ul li a {
+        color: #fff;
+        -webkit-transition: 0.6s all linear;
+        -moz-transition: 0.6s all linear;
+        -ms-transition: 0.6s all linear;
+        -o-transition: 0.6s all linear;
+        transition: 0.6s all linear; }
+        footer .subscribecontact-ul li a:hover,
+        footer .updated-ul li a:hover,
+        footer .footerlinks-ul li a:hover {
+          color: #6c8895; }
+  footer .subscribecontact-ul {
+    width: 18%;
+    padding-right: 2%; }
+  footer .updated-ul {
+    width: 46%;
+    padding: 0 2%;
+    border-right: 1px solid #6c8895;
+    border-left: 1px solid #6c8895; }
+    footer .updated-ul .keeputext {
+      color: #6c8895;
+      font-weight: 700; }
+    footer .updated-ul .subscribe-flink {
+      padding-top: 10px;
+      display: inline-block; }
+  footer .footerlinks-ul {
+    width: 24%;
+    padding-left: 2%; }
+  footer .footersocial-ul li {
+    display: inline-block;
+    vertical-align: top; }
+    footer .footersocial-ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      -webkit-transition: 0.6s all linear;
+      -moz-transition: 0.6s all linear;
+      -ms-transition: 0.6s all linear;
+      -o-transition: 0.6s all linear;
+      transition: 0.6s all linear; }
+      footer .footersocial-ul li a:hover {
+        color: #6c8895; }
+  footer .topbtn {
+    position: fixed;
+    right: 6.1%;
+    bottom: 40px;
+    padding: 9px 15px;
+    background: #e55100;
+    color: #fff;
+    font-size: 32px;
+    opacity: 1;
+    -webkit-transition: 0.6s all linear;
+    -moz-transition: 0.6s all linear;
+    -ms-transition: 0.6s all linear;
+    -o-transition: 0.6s all linear;
+    transition: 0.6s all linear; }
+    footer .topbtn:hover {
+      opacity: .8; }
+
+/*# sourceMappingURL=style.css.map */

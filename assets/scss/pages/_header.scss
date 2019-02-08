@@ -1,0 +1,246 @@
+header {	
+	.header-top { background-color: $black; }
+	h1 {
+		width: 10.8%;		
+		@include inlineblock;
+		background: $white;
+	}
+	.hamburger {
+		width: 88.5%;		
+		@include inlineblock;
+	}
+	nav {
+		.nav-li {
+			padding: 5px 10px;
+			margin-top: 15px;
+			position: relative;
+			@include inlineblock;
+			a{
+				@include tran;
+				&:hover {
+					color: $greydark;
+				}
+			}
+			&:hover .subnav-ul {
+				display: block;
+				background: $whiteop;
+				.subnav-li {					
+					a {
+						padding: 5px;
+						display: block;
+						color: $black;
+						line-height: 1.4;
+						&:hover {
+							color: $white;
+							background: $black;
+						}			
+					}
+				}
+			}
+			a {
+				color: $white;
+			}
+			&:nth-child(4) {
+				padding-left: 16%;
+			}		
+		}
+		.subnav-ul {
+			width: 150px;
+			margin-top: 5px;
+			display: none; 
+			position: absolute;
+			z-index: 1;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+		}
+		.logintext, .loginarrow {
+			@include inlineblock;
+		}
+		.logintext {
+			.leftlog, .rightlog {
+				@include inlineblock;
+			}
+			.logyellow {
+				display: block;
+				color: $gold;
+			}
+		}
+	}
+	.search {
+		padding: 5px 0;
+		background: transparent;
+		border-radius: 4px;
+		.searchbtn {
+			padding-left: 5px;
+			border: none;
+			outline: none;
+			background: transparent;
+			color: $white;
+			cursor: pointer;
+			font-size: 12px;
+		}
+		.searchbox {
+			border: none;
+			outline: none;
+			background: transparent;
+			color: $white;
+		}
+		::placeholder {
+			color: $white;
+			opacity: 1; /* Firefox */
+		}
+	}
+	.adfeature {
+		padding: 30px 0;
+		background: $white;
+		.adleft,
+		.adright {
+			@include inlineblock;
+			font-size: 14px;
+		}
+		.adleft {
+			width: 50%;
+			text-align: left;
+		}
+		.adright {
+			width: 45%;
+			text-align: right;
+			.adrighttext,
+			.adrightimg {
+				width: 45%;
+				max-width: 157px;
+				@include inlineblock(middle);
+			}
+		}
+	}
+	.socialmenusbar {
+		position: relative;
+		background: $greyfent;
+		.social-links {			
+			padding: 18px 0 11px;
+			display: inline-block;
+			.social-li {											
+				@include inlineblock;
+					filter: contrast(30%);
+					@include tran;
+					&:hover {
+						filter: contrast(50%);
+				}
+			}
+		}
+	}
+	.headermenu {
+		@include inlineblock;
+		float: right;
+		position: relative;
+		top: 10px;
+			// &:hover .menu-ul { display: block; }
+		.menu-btn {
+			width: 50px;
+			height: 50px;
+			display: block;
+			position: relative;
+			background: transparent;
+			&:hover .menubar1 { width: 70%; }
+			&:hover .menubar2 { width: 50%; }
+			&:hover .menubar3 { width: 30%; }
+			&.active .menubar1,
+			&.active .menubar2,
+			&.active .menubar3 { width: 100%; }	
+		}
+		.menubar1,
+		.menubar2,
+		.menubar3 {
+			height: 2px;
+			@include inlineblock;
+			position: absolute;
+			top: 30%;
+			right: 0;
+			transform: translateY(-50%);
+			background-color: $black;			
+			@include tran(.6s);			
+		}
+		.menubar1 {			
+			width: 35%;						
+			top: 30%;
+		}
+		.menubar2 {			
+			width: 95%;
+			top: 50%;			
+		}
+		.menubar3 {			
+			width: 75%;			
+			top: 70%;			
+		}
+	}
+	.active {
+		.menubar1 {
+			width: 100%;
+			top:50%;
+    	left: 0;
+    	transform: rotate(45deg);			
+		}
+		.menubar2 {
+			width: 100%;
+			animation-duration: .5s;
+    	animation-fill-mode: forwards;
+    	animation-timing-function: linear;
+			animation-name: middlebar;
+			
+				@keyframes middlebar {
+				from {
+				  opacity: 1;
+				  position: absolute;
+			    left: 0px;
+			  }
+			  to {
+			    opacity: 0;
+			    position: absolute;
+			    left: -100px;
+			  }
+			}
+		}
+		.menubar3 {
+			width: 100%;
+			top:50%;
+    	left: 0;
+			transform: rotate(135deg);
+		}
+	}	
+	.menu-ul {
+		display: none;
+		width: 300px;
+		position: absolute;
+		z-index: 2;
+		right: 0;
+		padding: 60px;
+		background-color: $white;
+		.menu-li {		
+			a {
+				display: block;
+				padding: 5px 0;				
+				margin: 1px 0;
+				background-color: transparent;
+				color: $greydark;
+				&:hover {
+					background-color: $bluelight;
+					color: $black;
+				}
+			}
+			&:hover .submenu-ul {
+				display: block;
+			}
+			.fa-angle-right { 
+				padding-left: 30px;
+				float: right; 
+			}
+		}
+		.submenu-ul {
+			display: none;			
+			li {
+				padding-left: 5%;
+			}
+		}
+	}
+}
