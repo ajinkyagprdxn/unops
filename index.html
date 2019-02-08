@@ -19,9 +19,9 @@
   <div class="container">
     <!-- Start of the header -->
     <header>
-      <div class="wrapper">
-        <!-- Start header-top -->
-        <div class="header-top">
+      <!-- Start header-top -->
+      <div class="header-top">
+        <div class="wrapper">
           <h1>
             <a href="index.html" title="The Economist">
               <img src="assets/images/logo.png" alt="The Economist">
@@ -98,9 +98,9 @@
                   </ul>
                 </li>
                 <li class="nav-li">
-                  <form action="#FIXME" method="GET">
-                    <span class="fas fa-search"></span>
-                    <input type="text" placeholder="Search">
+                  <form action="#FIXME" method="GET" class="search">
+                    <button type="submit" class="fas fa-search searchbtn"></button>
+                    <input type="search" placeholder="Search" class="searchbox">
                   </form>
                 </li>
               </ul>
@@ -108,45 +108,49 @@
           </div>
           <!-- end of top hamburger -->
         </div>
-        <!-- End of header-top -->
+      </div>
+      <!-- End of header-top -->
+      <div class="wrapper">
         <!-- Start Advertisement feature section -->
-        <div class="adfeature cf">
-          <span class="adlefttext">ADVERTISEMENT FEATURE ></span>
-          <span class="adrighttext">
-            SPONSERED BY
-            <img src="assets/images/unops-logo" alt="UNOPS Logo">
-          </span>
-        </div>
+        <ul class="adfeature cf">
+          <li class="adleft">
+            <span class="adlefttext">ADVERTISEMENT FEATURE ></span>
+          </li>
+          <li class="adright">
+            <span class="adrighttext">SPONSERED BY</span>
+            <img src="assets/images/unops-logo" class="adrightimg" alt="UNOPS Logo">
+          </li>
+        </ul>
         <!-- End of Advertisement feature section -->
         <!-- Start social links and menus bar -->
         <div class="socialmenusbar cf">
           <!-- Start social links section -->
           <ul class="social-links">
             <li class="social-li">
-              <a href="#FIXME" title="Linkedin">
+              <a href="#FIXME" title="Linkedin" target="_blank">
                 <img src="assets/images/Linkedin.png" alt="Linkedin">
               </a>
             </li>
             <li class="social-li">
-              <a href="#FIXME" title="Twitter">
+              <a href="#FIXME" title="Twitter" target="_blank">
                 <img src="assets/images/Twitter.png" alt="Twitter">
               </a>
             </li>
             <li class="social-li">
-              <a href="#FIXME" title="Facebook">
+              <a href="#FIXME" title="Facebook" target="_blank">
                 <img src="assets/images/Facebook.png" alt="Facebook">
               </a>
             </li>
             <li class="social-li">
-              <a href="#FIXME" title="Mail">
+              <a href="#FIXME" title="Mail" target="_blank">
                 <img src="assets/images/Mail.png" alt="Mail">
               </a>
             </li>
           </ul>
           <!-- End of social links section -->
           <!-- Start headermenu -->
-          <div class="headermenu">
-            <a href="#FIXME" title="Menu" class="menu-btn" id="menu-btn">
+          <div class="headermenu" id="menufull">
+            <a href="#FIXME" title="Menu" class="menu-btn">
               <span class="menubar1"></span>
               <span class="menubar2"></span>
               <span class="menubar3"></span>
@@ -216,7 +220,7 @@
       <!-- start banner section -->
       <div class="banner">
         <div class="wrapper">
-          <img src="assets/images/1S.jpg" alt="Executive Summary">
+          <!-- <img src="assets/images/1S.jpg" alt="Executive Summary"> -->
           <div class="bannertext">
             <p>
               EIU &amp; UNOPS Lorem ipsum dolor site amet,
@@ -227,20 +231,22 @@
         </div>
       </div>
       <!-- end of banner section -->
-      <!-- start mainaricle section -->
+      <!-- start mainarticle section -->
       <div class="mainarticle">
         <div class="wrapper">
-          <div class="bluerect1"></div>
+          <div class="bluerect1">
+            <img src="assets/images/Haiti-1N5A4975-Community-Construction-Housing-Claude-Andre-Nadon.jpg" alt="Construction-Housing-Claude-Andre-Nadon"
+              class="articleimg-square">
+          </div>
           <!-- Start rectanglepost -->
           <article class="rectanglepost">
-            <a href="#FIXME" title="The Economist Intelligence Unit">
+            <a href="#FIXME" title="The Economist Intelligence Unit" class="ecoint-link">
               <img src="assets/images/ecointell.png" alt="The Economist Intelligence Unit">
             </a>
             <h3>
               Lorem ipsum sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
               ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
             </h3>
-            <span class="blueline"></span>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -256,11 +262,11 @@
             </p>
             <ul class="articleimg-ul">
               <li class="articleimg-li">
-                <img src="assets/images/Haiti-1N5A4975-Community-Construction-Housing-Claude-Andre-Nadon.jpg" alt="Construction-Housing-Claude-Andre-Nadon">
+                <img src="assets/images/Haiti-1N5A4975-Community-Construction-Housing-Claude-Andre-Nadon.jpg" alt="Construction-Housing-Claude-Andre-Nadon"
+                  class="articleimg-square">
               </li>
               <li class="articleimg-li">
-                <h4>Quis ipsum suspendisse ultrices gravida</h4>
-                <span class="blueline"></span>
+                <h4>Quis ipsum suspendisse ultrices gravida.</h4>
                 <p>
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
                   totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -292,12 +298,12 @@
               eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo tempora
               incidunt ut laore et dolore .
             </p>
-            <a href="#FIXME" title="READ FULL ESSAY">READ FULL ESSAY <span class="rightarrow fas fa-angle-right"></span></a>
+            <a href="#FIXME" title="READ FULL ESSAY" class="readfull-btn">READ FULL ESSAY <span class="rightarrow fas fa-angle-right"></span></a>
           </article>
           <!-- end of rectanglepost -->
         </div>
       </div>
-      <!-- end of mainaricle section -->
+      <!-- end of mainarticle section -->
       <!-- start further reading section -->
       <div class="furtherreading">
         <div class="wrapper">
@@ -305,10 +311,13 @@
           <div class="bluerect2"></div>
           <ul class="further1-ul">
             <li class="further1-li">
+              <span class="hidetext">Hide this text.</span>
+            </li>
+            <li class="further1-li">
               <img src="assets/images/SouthSudan-UNOPS.jpg" alt="Blog 2 quis ipsum suspendisse ultrices gravida">
             </li>
             <li class="further1-li">
-              <img src="assets/images/ecointell.png" alt="The Economist Intelligence Unit">
+              <img src="assets/images/ecointell.png" alt="The Economist Intelligence Unit" class="ecointell">
               <h4>Blog 2 quis ipsum suspendisse ultrices gravida</h4>
               <p>
                 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
@@ -318,8 +327,8 @@
             </li>
           </ul>
           <ul class="further2-ul">
-            <li class="further2-li">
-              <img src="assets/images/unops-logo" alt="The Economist Intelligence Unit">
+            <li class="further2-li cf">
+              <img src="assets/images/unops-logo" class="unopslogo" alt="The Economist Intelligence Unit">
               <h4>Blog 2 quis ipsum suspendisse ultrices gravida</h4>
               <p>
                 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
@@ -330,6 +339,9 @@
             </li>
             <li class="further2-li">
               <img src="assets/images/Maldives-Possibility-to-use-to-be-confirmed.jpg" alt="Blog 2 quis ipsum suspendisse ultrices gravida">
+            </li>
+            <li class="further2-li">
+              <span class="hidetext">Hide this text.</span>
             </li>
           </ul>
         </div>
@@ -380,10 +392,10 @@
                 <a href="#FIXME" title="RSS" target="_blank" class="fas fa-rss"></a>
               </li>
             </ul>
-            <p>
+            <a href="#FIXME" title="Subscribe" class="subscribe-flink">
               <span class="fas fa-envelope"></span>
               Subscribe to The Economist newsletters
-            </p>
+            </a>
           </li>
         </ul>
         <ul class="footerlinks-ul">
@@ -392,7 +404,7 @@
           </li>
           <li>
             <a href="#FIXME" title="Reprints">Reprints</a>
-          </li> 
+          </li>
           <li>
             <a href="#FIXME" title="Careers">Careers</a>
           </li>
@@ -403,10 +415,12 @@
             <a href="#FIXME" title="Site Map">Site Map</a>
           </li>
         </ul>
+        <a href="#FIXME" title="Go to top" class="fas fa-angle-up topbtn"></a>
       </div>
     </footer>
     <!-- end of footer -->
   </div>
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
